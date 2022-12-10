@@ -9,9 +9,9 @@ public class Options {
         return opts;
     }
 
-    // private CompilerMode mode;
+    private CompilerMode mode;
     // private Platform platform = new X86Linux();
-    // private String outputFileName;
+    private String outputFileName;
     // private boolean verbose = false;
     // private LibraryLoader loader = new LibraryLoader();
     private List<SourceFile> sourceFiles;
@@ -22,5 +22,19 @@ public class Options {
 
     List<SourceFile> sourceFiles() {
         return sourceFiles;
+    }
+
+    String asmFileNameOf(SourceFile src) {
+        if (outputFileName != null && mode == CompilerMode.Compile) {
+            return outputFileName;
+        }
+        return src.asmFileName();
+    }
+
+    String objFileNameOf(SourceFile src) {
+        if (outputFileName != null && mode == CompilerMode.Assemble) {
+            return outputFileName;
+        }
+        return src.objFileName();
     }
 }
