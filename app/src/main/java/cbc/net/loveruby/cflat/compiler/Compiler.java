@@ -1,8 +1,8 @@
-package net.loveruby.cflat.compiler;
+package app.src.main.java.cbc.net.loveruby.cflat.compiler;
 
 import java.util.List;
 
-import net.loveruby.cflat.util.ErrorHandler;
+import app.src.main.java.cbc.net.loveruby.cflat.util.ErrorHandler;
 
 /**
  * Compiler

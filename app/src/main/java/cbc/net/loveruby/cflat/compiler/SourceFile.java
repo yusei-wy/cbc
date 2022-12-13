@@ -1,4 +1,4 @@
-package net.loveruby.cflat.compiler;
+package app.src.main.java.cbc.net.loveruby.cflat.compiler;
 
 import java.io.File;
 
