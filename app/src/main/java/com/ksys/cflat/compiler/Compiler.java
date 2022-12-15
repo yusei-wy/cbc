@@ -1,4 +1,7 @@
+package com.ksys.cflat.compiler;
+
 import java.util.List;
+import com.ksys.cflat.util.ErrorHandler;
 
 /**
  * Compiler

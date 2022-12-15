@@ -1,4 +1,4 @@
-package app.src.main.java.cbc.net.loveruby.cflat.util;
+package com.ksys.cflat.util;
 
 import java.io.OutputStream;
 import java.io.PrintStream;

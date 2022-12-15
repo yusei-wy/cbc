@@ -1,4 +1,4 @@
-package app.src.main.java.cbc.net.loveruby.cflat.compiler;
+package com.ksys.cflat.compiler;
 
 enum CompilerMode {
     Assemble("-c"),
