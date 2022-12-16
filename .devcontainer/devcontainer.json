@@ -16,7 +16,15 @@
     // "forwardPorts": [],
     // Use 'postCreateCommand' to run commands after the container is created.
     // "postCreateCommand": "java -version",
-    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}"
+	"postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"fwcd.kotlin",
+				"vscjava.vscode-java-pack"
+			]
+		}
+	}
     // Configure tool-specific properties.
     // "customizations": {},
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
