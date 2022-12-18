@@ -27,7 +27,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass.set("cbc.App")
+    mainClass.set("com.ksys/cflag/compiler.Compiler")
 }
 
 tasks.named<Test>("test") {

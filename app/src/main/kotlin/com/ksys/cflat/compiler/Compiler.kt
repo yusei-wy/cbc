@@ -1,48 +1,46 @@
-package com.ksys.cflat.compiler;
+package com.ksys.cflat.compiler
 
-import java.util.List;
-import com.ksys.cflat.util.ErrorHandler;
+import com.ksys.cflat.util.ErrorHandler
 
-/**
- * Compiler
- */
-public class Compiler {
-    static final public String ProgramName = "cbc";
-    static final public String Version = "1.0.0";
+/** Compiler */
+class Compiler(val programName: String) {
+    val errorHandler: ErrorHandler
 
-    public static void main(String[] args) {
-        new Compiler(ProgramName).commandMain(args);
+    init {
+        errorHandler = ErrorHandler(programName)
     }
 
-    public Compiler(String programName) {
-        this.errorHandler = new ErrorHandler(programName);
+    fun commandMain(args: List<String>) {
+        val opts = Options.parse(args)
+        val srcs = opts.sourceFiles
+        build(srcs, opts)
     }
 
-    private final ErrorHandler errorHandler;
-
-    private void commandMain(String[] args) {
-        Options opts = Options.parse(args);
-        List<SourceFile> srcs = opts.sourceFiles();
-        build(srcs, opts);
-    }
-
-    public void build(List<SourceFile> srcs, Options opts) {
-        for (SourceFile src : srcs) {
-            compile(src.path(), opts.asmFileNameOf(src), opts);
-            assemble(src.path(), opts.objFileNameOf(src), opts);
+    fun build(srcs: List<SourceFile>, opts: Options) {
+        for (src in srcs) {
+            compile(src.path(), opts.asmFileNameOf(src), opts)
+            assemble(src.path(), opts.objFileNameOf(src), opts)
         }
-        link(opts);
+        link(opts)
     }
 
-    public void compile(String srcPath, String destPath, Options opts) {
+    fun compile(srcPath: String, destPath: String, opts: Options) {
         // TODO: compile
     }
 
-    public void assemble(String srcPath, String destPath, Options opts) {
+    fun assemble(srcPath: String, destPath: String, opts: Options) {
         // TODO asseble
     }
 
-    public void link(Options opts) {
+    fun link(opts: Options) {
         // TODO: link
     }
+}
+
+const val PROGRAM_NAME = "cbc"
+const val VERSION = "1.0.0"
+
+fun main(args: List<String>) {
+    // NOTE: なぜ commandMain は static じゃないのにエラーじゃない？
+    Compiler(PROGRAM_NAME).commandMain(args)
 }
