@@ -4,5 +4,25 @@
 
 ## 開発
 
-devcontainer を使って環境を構築.  
-VSCode 起動後コマンドパレットで "Reopen in Container" と入力.  
+devcontainer を使って環境を構築.
+VSCode 起動後コマンドパレットで "Reopen in Container" と入力.
+
+## Commands
+
+### Initialize
+
+```
+$ make init
+```
+
+### Build
+
+```
+$ make build
+```
+
+### Run
+
+```
+$ make run
+```
