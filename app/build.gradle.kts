@@ -9,6 +9,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     application
+    kotlin("jvm") version "1.7.21"
 }
 
 repositories {
@@ -26,7 +27,7 @@ dependencies {
 
 application {
     // Define the main class for the application.
-    mainClass.set("cbc.App")
+    mainClass.set("com.ksys/cflag/compiler.Compiler")
 }
 
 tasks.named<Test>("test") {
