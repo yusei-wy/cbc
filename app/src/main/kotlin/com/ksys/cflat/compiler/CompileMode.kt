@@ -1,6 +1,6 @@
 package com.ksys.cflat.compiler;
 
-enum CompilerMode {
+enum class CompilerMode {
     Assemble("-c"),
     Compile("-S");
 
