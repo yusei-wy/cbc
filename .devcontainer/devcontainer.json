@@ -2,15 +2,14 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/java
 {
     "name": "Java",
-    "build": {
-        "dockerfile": "Dockerfile"
-    },
+    "image": "mcr.microsoft.com/devcontainers/java:0-17-bullseye",
     "features": {
         "ghcr.io/devcontainers/features/java:1": {
             "version": "none",
             "installMaven": "false",
             "installGradle": "true"
-        }
+        },
+        "ghcr.io/mikaello/devcontainer-features/kotlinc:1": {}
     },
     "extensions": [
         "mathiasfrohlich.kotlin",
@@ -20,16 +19,16 @@
     // "forwardPorts": [],
     // Use 'postCreateCommand' to run commands after the container is created.
     // "postCreateCommand": "java -version",
-	"postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				"fwcd.kotlin",
-				"vscjava.vscode-java-pack",
-				"vscjava.vscode-gradle"
-			]
-		}
-	}
+    "postStartCommand": "git config --global --add safe.directory ${containerWorkspaceFolder}",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "fwcd.kotlin",
+                "vscjava.vscode-java-pack",
+                "vscjava.vscode-gradle"
+            ]
+        }
+    }
     // Configure tool-specific properties.
     // "customizations": {},
     // Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
