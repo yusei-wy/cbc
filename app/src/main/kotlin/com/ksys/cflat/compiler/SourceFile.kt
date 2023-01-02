@@ -41,19 +41,18 @@ class SourceFile {
         return replaceExt(EXT_OBJECT_FILE)
     }
 
-    // TODO: test
     private fun replaceExt(ext: String): String {
         return baseNameStrip(originalName, true) + ext
     }
 
-    private fun baseName(path: String): String {
-        return File(path).getName()
-    }
-
     private fun baseNameStrip(path: String, stripExt: Boolean): String {
         if (stripExt) {
-            return File(path).getName().replaceFirst("\\.[^.]*$", "")
+            return baseName(path).replaceFirst("\\.[^.]*$".toRegex(), "")
         }
         return baseName(path)
+    }
+
+    private fun baseName(path: String): String {
+        return File(path).getName()
     }
 }
