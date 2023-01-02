@@ -10,15 +10,15 @@ class SourceFile {
         val EXT_STATIC_LIBRARY = ".a"
         val EXT_SHARED_LIBRARY = ".so"
         val EXT_EXECUTEABLE_FILE = ""
-        // FIXME: error
-        // val KNOWN_EXTENSIONS: String[] = {
-        //     EXT_CFLAT_SOURCE,
-        //     EXT_ASSEMBLY_SOURCE,
-        //     EXT_OBJECT_FILE,
-        //     EXT_STATIC_LIBRARY,
-        //     EXT_SHARED_LIBRARY,
-        //     EXT_EXECUTEABLE_FILE
-        // };
+        val KNOWN_EXTENSIONS =
+                listOf(
+                        EXT_CFLAT_SOURCE,
+                        EXT_ASSEMBLY_SOURCE,
+                        EXT_OBJECT_FILE,
+                        EXT_STATIC_LIBRARY,
+                        EXT_SHARED_LIBRARY,
+                        EXT_EXECUTEABLE_FILE
+                )
     }
 
     private val originalName: String
